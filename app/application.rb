@@ -6,10 +6,12 @@ class Application
     now = Time.now
 
     resp.write "#{now}\n"
+    now_array = now.to_a
+    hour = now_array[2]
 
-    if now <= 12
+    if hour <= 12
       resp.write "Good Morning!"
-    elsif now > 12
+    elsif hour > 12
       resp.write "Good Afternoon!"
     end
 
